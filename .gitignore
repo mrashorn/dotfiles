@@ -7,6 +7,7 @@ atril/
 configstore/
 dconf/
 dotfiles/
+nvim/
 gtk-2.0/
 gtk-3.0/
 libreoffice/
