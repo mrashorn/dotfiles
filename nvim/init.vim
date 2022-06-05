@@ -28,6 +28,9 @@ call plug#begin('~/.vim/plugged')
 "colorschemes
 Plug 'gruvbox-community/gruvbox'
 
+"LSP Setup
+Plug 'neovim/nvim-lspconfig'
+
 "Telescope
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
@@ -36,9 +39,10 @@ call plug#end()
 
 
 
-
-
-
-
 let g:gruvbox_contrast_dark='hard'
 colorscheme gruvbox
+
+
+lua << EOF
+require'lspconfig'.pyright.setup{}
+EOF
