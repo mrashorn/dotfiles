@@ -10,16 +10,31 @@ set termguicolors
 
 
 
-"key maps
+"remaps
 "leader key
 let mapleader=" "
 nnoremap <leader>n :noh<Cr> 
 
+"Telescope remaps
+nnoremap <leader>ff <cmd>Telescope find_files<Cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<Cr>
+
+
+
+
 
 "Plugins
 call plug#begin('~/.vim/plugged')
+"colorschemes
 Plug 'gruvbox-community/gruvbox'
+
+"Telescope
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
 call plug#end()
+
+
+
 
 
 
