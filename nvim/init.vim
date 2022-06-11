@@ -37,6 +37,9 @@ Plug 'hrsh7th/cmp-path' "Causing nvim to close slowly.
 "Telescope
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
+
+"Treesitter
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 call plug#end()
 
 
@@ -90,4 +93,16 @@ lua << EOF
 	vim.keymap.set("n", "gi", vim.lsp.buf.implementation, {buffer=0}) -- normal mode, gd, goes to implementation, current buffer, Ctrl-T to jump back
 	end
 	}
+
+-- TreeSitter Setup
+  require'nvim-treesitter.configs'.setup {
+    -- A list of parser names, or "all"
+    ensure_installed = { "cpp", "python", },
+
+    highlight = {
+      -- `false` will disable the whole extension
+	  enable = true,},
+	  }
+
+
 EOF
