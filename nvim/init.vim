@@ -22,8 +22,6 @@ nnoremap <leader>fg <cmd>Telescope live_grep<Cr>
 
 
 
-
-
 "Plugins
 call plug#begin('~/.vim/plugged')
 "colorschemes
@@ -71,7 +69,7 @@ lua << EOF
     }
 })
 
-  -- Setup lspconfig.
+  -- Setup lspconfig for python
   local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
   require('lspconfig').pyright.setup {
     capabilities = capabilities,
@@ -82,4 +80,14 @@ lua << EOF
 	vim.keymap.set("n", "gi", vim.lsp.buf.implementation, {buffer=0}) -- normal mode, gd, goes to implementation, current buffer, Ctrl-T to jump back
 	end
   }
+ -- Set up lspconfig for cpp 
+  require('lspconfig').clangd.setup {
+    capabilities = capabilities,
+	on_attach = function() 
+	vim.keymap.set("n", "K", vim.lsp.buf.hover, {buffer=0}) -- normal mode, cap K, calls hover function, current buffer
+	vim.keymap.set("n", "gd", vim.lsp.buf.definition, {buffer=0}) -- normal mode, gd, goes to defn, current buffer, Ctrl-T to jump back
+	vim.keymap.set("n", "gT", vim.lsp.buf.type_definition, {buffer=0}) -- normal mode, gd, goes to type defn, current buffer, Ctrl-T to jump back
+	vim.keymap.set("n", "gi", vim.lsp.buf.implementation, {buffer=0}) -- normal mode, gd, goes to implementation, current buffer, Ctrl-T to jump back
+	end
+	}
 EOF
