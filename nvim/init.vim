@@ -9,6 +9,7 @@ set scrolloff=8 "scroll page at bottom 8 lines
 set termguicolors
 set tabstop=4
 set shiftwidth=4
+set mouse=a
 
 
 "remaps
@@ -26,6 +27,10 @@ nnoremap <leader>fg <cmd>Telescope live_grep<Cr>
 call plug#begin('~/.vim/plugged')
 "colorschemes
 Plug 'gruvbox-community/gruvbox'
+Plug 'bluz71/vim-moonfly-colors'
+Plug 'bluz71/vim-nightfly-guicolors'
+Plug 'navarasu/onedark.nvim'
+
 
 "LSP Setup
 Plug 'neovim/nvim-lspconfig'
@@ -45,8 +50,19 @@ call plug#end()
 
 
 
+"Gruvbox settings
 let g:gruvbox_contrast_dark='hard'
-colorscheme gruvbox
+"OneDark settings 
+let g:onedark_config = {
+			\'style': 'darker'
+			\}
+
+"colorschemes 
+"colorscheme gruvbox
+"colorscheme moonfly
+"colorscheme nightfly
+colorscheme onedark
+
 
 set completeopt=menu,menuone,noselect
 
