@@ -57,12 +57,12 @@ let g:onedark_config = {
 			\'style': 'darker'
 			\}
 
+
 "colorschemes 
 "colorscheme gruvbox
-"colorscheme moonfly
+colorscheme moonfly
 "colorscheme nightfly
-colorscheme onedark
-
+"colorscheme onedark
 
 set completeopt=menu,menuone,noselect
 
