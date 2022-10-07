@@ -59,8 +59,8 @@ let g:onedark_config = {
 
 
 "colorschemes 
-"colorscheme gruvbox
-colorscheme moonfly
+colorscheme gruvbox
+"colorscheme moonfly
 "colorscheme nightfly
 "colorscheme onedark
 
