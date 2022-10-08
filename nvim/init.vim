@@ -30,6 +30,8 @@ Plug 'gruvbox-community/gruvbox'
 Plug 'bluz71/vim-moonfly-colors'
 Plug 'bluz71/vim-nightfly-guicolors'
 Plug 'navarasu/onedark.nvim'
+Plug 'sainnhe/sonokai'
+Plug 'vv9k/bogster'
 
 
 "LSP Setup
@@ -56,13 +58,16 @@ let g:gruvbox_contrast_dark='hard'
 let g:onedark_config = {
 			\'style': 'darker'
 			\}
-
+"Sonokai settings
+let g:sonokai_style = 'atlantis'
+let g:sonokai_better_performance = 1
 
 "colorschemes 
-colorscheme gruvbox
+"colorscheme gruvbox
 "colorscheme moonfly
 "colorscheme nightfly
 "colorscheme onedark
+colorscheme sonokai
 
 set completeopt=menu,menuone,noselect
 
