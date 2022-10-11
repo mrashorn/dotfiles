@@ -63,11 +63,12 @@ let g:sonokai_style = 'atlantis'
 let g:sonokai_better_performance = 1
 
 "colorschemes 
-"colorscheme gruvbox
+colorscheme gruvbox
 "colorscheme moonfly
 "colorscheme nightfly
 "colorscheme onedark
-colorscheme sonokai
+"colorscheme sonokai
+
 
 set completeopt=menu,menuone,noselect
 
