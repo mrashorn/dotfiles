@@ -41,6 +41,10 @@ Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-buffer' "Causing nvim to close slowly
 Plug 'hrsh7th/cmp-path' "Causing nvim to close slowly.
 
+"Snippet setup
+Plug 'L3MON4D3/LuaSnip'
+Plug 'saadparwaiz1/cmp_luasnip'
+
 "Telescope
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
@@ -48,8 +52,6 @@ Plug 'nvim-telescope/telescope.nvim'
 "Treesitter
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 call plug#end()
-
-
 
 
 "Gruvbox settings
@@ -64,11 +66,6 @@ let g:sonokai_better_performance = 1
 
 "colorschemes 
 colorscheme gruvbox
-"colorscheme moonfly
-"colorscheme nightfly
-"colorscheme onedark
-"colorscheme sonokai
-
 
 set completeopt=menu,menuone,noselect
 
@@ -77,6 +74,11 @@ lua << EOF
   local cmp = require'cmp'
 
   cmp.setup({
+    snippet = {
+      expand = function(args)
+        require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
+      end,
+    },
     mapping = {
       ['<C-b>'] = cmp.mapping.scroll_docs(-4),
       ['<C-f>'] = cmp.mapping.scroll_docs(4),
@@ -90,6 +92,7 @@ lua << EOF
 
     sources = {
       { name = "nvim_lsp", keyword_length = 4 },
+	  { name = "luasnip", keyword_length = 4},
 	  { name = "buffer", keyword_length = 4},
     }
 })
