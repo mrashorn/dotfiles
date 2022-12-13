@@ -17,8 +17,13 @@ set mouse=a
 let mapleader=" "
 nnoremap <leader>n :noh<Cr> 
 
+"exits terminal insert mode with normal insert mode exit key.
+if has('nvim')
+	tnoremap <C-[> <C-\><C-n>
+endif
+
 "Telescope remaps
-nnoremap <leader>ff <cmd>Telescope find_files<Cr>
+nnoremap <leader>ff <cmd>Telescope find_files<Cr> 
 nnoremap <leader>fg <cmd>Telescope live_grep<Cr>
 
 
@@ -56,6 +61,7 @@ call plug#end()
 
 "Gruvbox settings
 let g:gruvbox_contrast_dark='hard'
+let g:gruvbox_contrast_light='medium'
 "OneDark settings 
 let g:onedark_config = {
 			\'style': 'darker'
