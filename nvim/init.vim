@@ -13,6 +13,8 @@ set mouse=a
 
 
 
+
+
 "remaps
 "leader key
 let mapleader=" "
