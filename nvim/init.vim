@@ -12,6 +12,7 @@ set shiftwidth=4
 set mouse=a
 
 
+
 "remaps
 "leader key
 let mapleader=" "
@@ -37,7 +38,7 @@ Plug 'bluz71/vim-nightfly-guicolors'
 Plug 'navarasu/onedark.nvim'
 Plug 'sainnhe/sonokai'
 Plug 'vv9k/bogster'
-
+Plug 'KabbAmine/yowish.vim'
 
 "LSP Setup
 Plug 'neovim/nvim-lspconfig'
@@ -59,6 +60,7 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 call plug#end()
 
 
+
 "Gruvbox settings
 let g:gruvbox_contrast_dark='hard'
 let g:gruvbox_contrast_light='medium'
@@ -71,7 +73,8 @@ let g:sonokai_style = 'atlantis'
 let g:sonokai_better_performance = 1
 
 "colorschemes 
-colorscheme gruvbox
+"colorscheme gruvbox
+colorscheme yowish
 
 set completeopt=menu,menuone,noselect
 
@@ -91,7 +94,7 @@ lua << EOF
 	  ['<tab>'] = cmp.mapping.select_next_item(),
       ['<C-Space>'] = cmp.mapping.complete(),
       ['<C-e>'] = cmp.mapping.abort(),
-      ['<CR>'] = cmp.mapping.confirm({
+	  ['<C-p>'] = cmp.mapping.confirm({
 	  --behavior = cmp.ConfirmBehavior.Insert,
 	  select = true }), 
     },
