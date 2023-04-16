@@ -6,7 +6,6 @@ TrollteV
 atril/
 configstore/
 dconf/
-dotfiles/
 gtk-2.0/
 gtk-3.0/
 libreoffice/
@@ -16,6 +15,9 @@ ristretto/
 update-notifier/
 user-dirs.dirs
 user-dirs.locale
-xfce4/
+
+xfce4/*
+!xfce4/terminal/
+
 Trolltech.conf
 xubuntu/
