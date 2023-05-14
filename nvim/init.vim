@@ -75,8 +75,8 @@ let g:sonokai_style = 'atlantis'
 let g:sonokai_better_performance = 1
 
 "colorschemes 
-"colorscheme gruvbox
-colorscheme yowish
+colorscheme gruvbox
+"colorscheme yowish
 
 set completeopt=menu,menuone,noselect
 
@@ -109,7 +109,7 @@ lua << EOF
 })
 
   -- Setup lspconfig for python
-  local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+  local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
   require('lspconfig').pyright.setup {
     capabilities = capabilities,
 	on_attach = function() 
@@ -122,13 +122,16 @@ lua << EOF
  -- Set up lspconfig for cpp 
   require('lspconfig').clangd.setup {
     capabilities = capabilities,
-	on_attach = function() 
+	on_attach = function(client, bufnr) 
+	client.server_capabilities.semanticTokensProvider = nil -- this line disables the "new" lsp specific highlighting in newer versions of neovim and instead
+															-- uses tree sitter sytax highlighting. 
 	vim.keymap.set("n", "K", vim.lsp.buf.hover, {buffer=0}) -- normal mode, cap K, calls hover function, current buffer
 	vim.keymap.set("n", "gd", vim.lsp.buf.definition, {buffer=0}) -- normal mode, gd, goes to defn, current buffer, Ctrl-T to jump back
 	vim.keymap.set("n", "gT", vim.lsp.buf.type_definition, {buffer=0}) -- normal mode, gd, goes to type defn, current buffer, Ctrl-T to jump back
 	vim.keymap.set("n", "gi", vim.lsp.buf.implementation, {buffer=0}) -- normal mode, gd, goes to implementation, current buffer, Ctrl-T to jump back
 	end
 	}
+
 
 -- TreeSitter Setup
   require'nvim-treesitter.configs'.setup {
@@ -142,3 +145,4 @@ lua << EOF
 
 
 EOF
+
