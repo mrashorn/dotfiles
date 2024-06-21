@@ -29,6 +29,11 @@ endif
 nnoremap <leader>ff <cmd>Telescope find_files<Cr> 
 nnoremap <leader>fg <cmd>Telescope live_grep<Cr>
 
+"Copy everything inside { } including the brackets with SHIFT+Y
+" need to fix this remap! map() is for lua, 
+" right now it is trying to execute when I open any file. 
+"nnoremap("n","YY","va{Vy",opts)
+
 
 
 "Plugins
@@ -41,6 +46,7 @@ Plug 'navarasu/onedark.nvim'
 Plug 'sainnhe/sonokai'
 Plug 'vv9k/bogster'
 Plug 'KabbAmine/yowish.vim'
+Plug 'JoosepAlviste/palenightfall.nvim'
 
 "LSP Setup
 Plug 'neovim/nvim-lspconfig'
@@ -75,8 +81,9 @@ let g:sonokai_style = 'atlantis'
 let g:sonokai_better_performance = 1
 
 "colorschemes 
-colorscheme gruvbox
+"colorscheme gruvbox
 "colorscheme yowish
+colorscheme moonfly
 
 set completeopt=menu,menuone,noselect
 
