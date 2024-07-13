@@ -47,6 +47,8 @@ Plug 'sainnhe/sonokai'
 Plug 'vv9k/bogster'
 Plug 'KabbAmine/yowish.vim'
 Plug 'JoosepAlviste/palenightfall.nvim'
+Plug 'EdenEast/nightfox.nvim'
+Plug 'rebelot/kanagawa.nvim'
 
 "LSP Setup
 Plug 'neovim/nvim-lspconfig'
@@ -82,8 +84,8 @@ let g:sonokai_better_performance = 1
 
 "colorschemes 
 "colorscheme gruvbox
-"colorscheme yowish
-colorscheme moonfly
+"colorscheme moonfly
+colorscheme kanagawa-wave
 
 set completeopt=menu,menuone,noselect
 
